@@ -94,9 +94,9 @@ class SinglyLinkedList {
     const node = this.get(index);
     if (node) {
       node.val = value;
-      return false;
+      return true;
     }
-    return true;
+    return false;
   }
 
   insert(index, value) {
