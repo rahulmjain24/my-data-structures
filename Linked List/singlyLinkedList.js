@@ -125,22 +125,22 @@ class SinglyLinkedList {
         return undefined;
     }
     if(index === 0) {
-        return this.shift()
+        return this.shift();
     }
     if(index === this.length - 1) {
-        return this.pop()
+        return this.pop();
     }
     const prevNode = this.get(index-1);
-    const current = prevNode.next
-    prevNode.next = current.next
+    const current = prevNode.next;
+    prevNode.next = current.next;
     this.length--;
-    return current
+    return current;
   }
 
   reverse() {
     // Reverses the list
-    let node = this.head
-    this.head = this.tail
+    let node = this.head;
+    this.head = this.tail;
     this.tail = node;
 
     let lastNode = null;
@@ -150,18 +150,18 @@ class SinglyLinkedList {
         nextNode = node.next;
         node.next = lastNode;
         lastNode = node;
-        node = nextNode
+        node = nextNode;
     }
 
-    return this
+    return this;
   }
 
   print() {
     // Prints all the values of given nodes
-    const arr = []
+    const arr = [];
     let curr = this.head;
     while (curr) {
-      arr.push(curr.val)
+      arr.push(curr.val);
       curr = curr.next;
     }
     console.log(arr);
