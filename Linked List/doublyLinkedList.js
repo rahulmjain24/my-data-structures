@@ -39,6 +39,7 @@ class DoublyLinkedList {
             this.head = null;
         } else {
             this.tail.next = null;
+            current.prev = null;
         }
         this.length--;
         return current;
@@ -56,6 +57,7 @@ class DoublyLinkedList {
             this.tail = null;
         } else {
             this.head.prev = null;
+            current.next = null;
         }
         this.length--;
         return current;
@@ -126,6 +128,7 @@ class DoublyLinkedList {
         current.prev = node;
         current = node.prev;
         current.next = node;
+        this.length++;
         return true;
     }
 
@@ -143,6 +146,8 @@ class DoublyLinkedList {
         const node = this.get(index);
         node.prev.next = node.next;
         node.next.prev = node.prev;
+        node.prev = null;
+        node.next = null;
         this.length--;
         return node;
     }
@@ -173,3 +178,11 @@ class DoublyLinkedList {
         console.log(arr);
     }
 }
+
+const list = new DoublyLinkedList()
+list.push(1)
+list.push(2)
+list.push(3)
+list.remove(1)
+
+console.log(list)

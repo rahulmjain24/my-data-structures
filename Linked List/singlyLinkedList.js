@@ -121,16 +121,16 @@ class SinglyLinkedList {
 
   remove(index) {
     // Removes a node at given index
-    if(index < 0 || index >= this.length) {
-        return undefined;
+    if (index < 0 || index >= this.length) {
+      return undefined;
     }
-    if(index === 0) {
-        return this.shift();
+    if (index === 0) {
+      return this.shift();
     }
-    if(index === this.length - 1) {
-        return this.pop();
+    if (index === this.length - 1) {
+      return this.pop();
     }
-    const prevNode = this.get(index-1);
+    const prevNode = this.get(index - 1);
     const current = prevNode.next;
     prevNode.next = current.next;
     this.length--;
@@ -146,11 +146,11 @@ class SinglyLinkedList {
     let lastNode = null;
     let nextNode;
 
-    while(node !== null) {
-        nextNode = node.next;
-        node.next = lastNode;
-        lastNode = node;
-        node = nextNode;
+    while (node !== null) {
+      nextNode = node.next;
+      node.next = lastNode;
+      lastNode = node;
+      node = nextNode;
     }
 
     return this;
